@@ -1,0 +1,85 @@
+<br><br><div *ngIf="userPage" class="container">
+    <div class="row">
+        <div class="profile">
+                            <table class="table table-responsive" >
+                                <tr>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Email</th>
+                                    <th>Contact</th>
+                                    <th>Address</th>
+                                    <th>Action</th>
+                                </tr>
+                                <tr *ngFor="let user of data">
+                                    <td>{{user.fname}}</td>
+                                    <td>{{user.lname}}</td>
+                                    <td>{{user.email}}</td>
+                                    <td>{{user.mobile}}</td>
+                                    <td>{{user.address}}</td>
+                                    <td>
+                                        <button (click)="editProfile(user)" class="btn btn-warning shadow-none"> Edit</button> &nbsp;
+                                        <input type="button"  value="delete" (click)="deleteUser(user.id)"
+                                                        class="btn btn-danger "> 
+                                    </td>
+                                </tr>
+                            </table>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="editPage" style="margin-top: 90px;" class="container">
+    <div class="row centered-form">
+        <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Please Update for Gargestore <small>It's free!</small></h3>
+                </div>
+                <div class="panel-body">
+                    <form [formGroup]="registerForm">
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" id="first_name" formControlName="fname"
+                                        class="form-control input-sm" placeholder="First Name">
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" formControlName="lname" id="last_name"
+                                        class="form-control input-sm" placeholder="Last Name">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" id="email" formControlName="email" class="form-control input-sm"
+                                placeholder="Email Address">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="Address" formControlName="address" class="form-control input-sm"
+                                placeholder="Address">
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" id="mobile" formControlName="mobile"
+                                        class="form-control input-sm" placeholder="Mobile">
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control input-sm" formControlName="pincode"
+                                        placeholder="Pin Code">
+                                </div>
+                            </div>                            
+                        </div>
+                        <input type="button" [disabled]='!registerForm.valid' value="Update" (click)="updateUser()"
+                            class="btn btn-info btn-block">
+                             
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

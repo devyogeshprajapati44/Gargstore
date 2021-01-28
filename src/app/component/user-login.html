@@ -1,0 +1,23 @@
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+    
+      <div class="fadeIn first">
+        <img src="https://www.b-cube.in/wp-content/uploads/2014/05/aditya-300x177.jpg" id="icon" alt="User Icon" />
+        <br> <br>
+        <h1>Gargestore.Login</h1>
+        <br> <br> 
+      </div>
+      <form [formGroup]="loginForm">
+        <input type="text" id="login" class="fadeIn second" formControlName="username" placeholder="Username">
+        <br> <br>
+        <input type="text" id="password" class="fadeIn third" formControlName="password" placeholder="Password">
+        <br> <br>
+        <input type="button" (click)="userlogin()" class="fadeIn fourth" value="Log In">
+      </form>
+        
+        <a class="underlineHover"(click)='registrationload()' style="margin:10px; padding:10px;color: chartreuse; border-bottom: darkblue;">New Registration</a>
+      
+      </div>
+    </div>
+  
+ 

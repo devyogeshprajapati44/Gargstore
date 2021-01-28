@@ -1,0 +1,25 @@
+.profile{
+    margin: auto;
+    /*margin-top: 100px;*/
+    /* font-size: 30px; */
+    background: cadetblue;
+    color: aliceblue;
+    font-style: oblique;
+    padding: 12px;
+    text-align: center;
+}
+.head-user{
+    margin: auto;
+    width: 63.3%;
+    font-size: 25px;
+    margin-top: 100px;
+}
+.user-head{
+    margin: auto;
+    margin-top: 75px;
+    background: blueviolet;
+    color: rebeccapurple;
+    padding: 10px;
+    color: seashell;
+    text-align: center;
+}
